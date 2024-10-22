@@ -9,6 +9,9 @@ import { TaskComponent } from './task/task.component';
   styleUrl: './tasks.component.css'
 })
 export class TasksComponent {
+  onTaskComplete(id:string){
+  this.tasks=this.tasks.filter(task=>task.taskId !==id);
+}
   name = input.required<string>();
   @Input({ required: true }) userId!: string;
 
@@ -21,22 +24,50 @@ export class TasksComponent {
       taskId: 't1',
       userId: 'u1',
       title: 'Master Angular',
-      summary: 'gvaddgas',
+      summary: 'for frontend',
       dueDate: '2024-10-25',
+    },
+    {
+      taskId: 't7',
+      userId: 'u1',
+      title: 'Master JAVA',
+      summary: 'For backend',
+      dueDate: '2024-10-27',
     },
     {
       taskId: 't2',
       userId: 'u2',
       title: 'Master JAVA',
-      summary: 'gvaddgas',
+      summary: 'For backend',
       dueDate: '2024-10-27',
     },
     {
       taskId: 't3',
       userId: 'u3',
-      title: 'Master React',
-      summary: 'gvaddgas',
+      title: 'Master Spring',
+      summary: 'for stable backend',
       dueDate: '2024-10-26',
+    },
+    {
+      taskId: 't4',
+      userId: 'u4',
+      title: 'Win against NZ in Bangaluru test',
+      summary: 'for being stable in WTC',
+      dueDate: '2024-10-27',
+    },
+    {
+      taskId: 't5',
+      userId: 'u5',
+      title: 'Singing',
+      summary: 'Nothing',
+      dueDate: '2024-10-26',
+    },
+    {
+      taskId: 't6',
+      userId: 'u6',
+      title: 'Do not choke in Bangaluru test',
+      summary: 'Best of luck',
+      dueDate: '2024-10-24',
     }
   ]
 }

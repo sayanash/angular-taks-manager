@@ -1,5 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
+
+interface task{
+  taskId: string;
+  userId: string;
+  title: string;
+  summary: string;
+  dueDate: string;
+}
 @Component({
   selector: 'app-task',
   standalone: true,
@@ -8,5 +16,12 @@ import { Component } from '@angular/core';
   styleUrl: './task.component.css'
 })
 export class TaskComponent {
+  onCompleteTask(){
+    this.complete.emit(this.task.taskId)
+  }
+@Input ({
+  required:true
+})task !:task
 
+@Output()complete=new EventEmitter<string>();
 }
